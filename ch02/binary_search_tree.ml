@@ -13,11 +13,13 @@ module type SET = sig
 
   val empty   : set
   val insert  : elem -> set -> set
-  val member : elem -> set -> bool
+  val member  : elem -> set -> bool
 end
+
 
 module type UNBALANCED_SET =
   functor (Element : ORDERED) -> SET with type elem = Element.t
+
 
 module BinarySearchTreeFn : UNBALANCED_SET =
   functor (Element : ORDERED) ->
