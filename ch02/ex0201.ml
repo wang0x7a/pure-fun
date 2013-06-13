@@ -18,3 +18,14 @@ let rec suffixes (l : 'a list) : 'a list list =
    Time complexity: O(n)
    Space complexity: O(n) (the resursion will consume a n-depth stack)
  *)
+
+(* TCO:
+   Use tail recursion to reduce the depth of the stack, and hence, 
+   the space complexity becomes O(1).
+ *)
+let suffixes (l : 'a list) : 'a list list =
+  let rec aux (acc : 'a list list) = function
+  | [] -> acc @ [[]]
+  | (_ :: t) as lst -> aux (acc @ [lst]) t
+  in aux [] l
+;;
