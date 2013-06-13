@@ -48,6 +48,9 @@ module BinarySearchTreeFn : UNBALANCED_SET =
 
 
 (* Test case *)
+(* Here, I do not specify the signiture of IntElement,
+   in order to expose the int type of t to IntTree.
+ *)
 module IntElement = struct
   type t = int
 
