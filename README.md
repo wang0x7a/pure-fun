@@ -10,10 +10,8 @@ of giants. :-)
 
 Refereces
 ---------
-[1] Purely Functional Data Structures, Chris Okasaki
+[1] Purely Functional Data Structures, Chris Okasaki, 
     Cambridge University Press
 
-[2] Markus Mottl's Implementation of 
+[2] Markus Mottl's [Implementation](https://bitbucket.org/mmottl/pure-fun) of 
     Okasaki's Purely Functional Data Structures in OCaml.
-
-    https://bitbucket.org/mmottl/pure-fun
