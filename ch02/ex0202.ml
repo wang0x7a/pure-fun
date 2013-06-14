@@ -20,7 +20,7 @@ let rec insert (x : 'a) (tree : 'a bst) : 'a bst =
 let member (x : 'a) (tree : 'a bst) : bool =
   let rec loop (tmp : 'a) (subtree : 'a bst) : bool =
     match subtree with
-    | Nil -> x >= tmp  
+    | Nil -> x = tmp  
     (*| Tree (Nil, y, Nil) -> x = tmp*)
     | Tree (r, y, l) ->
       if x > y then loop tmp l
