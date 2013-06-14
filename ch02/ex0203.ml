@@ -14,7 +14,7 @@ let rec insert (x : 'a) (tree : 'a bst) : 'a bst =
   | Nil -> Tree (Nil, x, Nil)
   | Tree (l, y, r) ->
     (* One of the keys to understanding functional data structures is
-     * the copy-share process. For example,
+     * the copying-sharing process. For example,
      * A copy is made by constructing a new Tree (Tree (l, y, insert x r)),
      * and l and y, in this example, are shared by the copy.
      *)
