@@ -33,17 +33,17 @@ module BinarySearchTreeFn : UNBALANCED_SET =
       let rec insert (x : elem) (t : set) : set =
         match t with
         | Nil -> Tree (Nil, x, Nil)
-        | Tree (r, y, l) ->
-          if Element.lt x y then Tree (insert x r, y, l)
-          else if Element.lt y x then Tree (r, y, insert x l)
+        | Tree (l, y, r) ->
+          if Element.lt x y then Tree (insert x l, y, r)
+          else if Element.lt y x then Tree (l, y, insert x r)
           else t
 
       let rec member (x : elem) (t : set) : bool =
         match t with
         | Nil -> false
-        | Tree (r, y, l) ->
-          if Element.lt x y then member x r
-          else if Element.lt y x then member x l
+        | Tree (l, y, r) ->
+          if Element.lt x y then member x l
+          else if Element.lt y x then member x r
           else true 
     end
 ;;
