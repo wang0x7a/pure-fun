@@ -25,3 +25,17 @@ let complete (x : 'a) (depth : int) : 'a bst =
     else loop (n - 1) (Tree (subtree, x, subtree))
   in loop depth (Tree (Nil, x, Nil))
 ;;
+
+let rec balanced (x : 'a) (n : int) : 'a bst =
+  if n = 0 then Nil
+  else if n = 1 then Tree (Nil, x, Nil)
+  else if (n - 1) mod 2 = 0 then
+    let subtree = balanced x (n / 2) in
+    (* We can only copy nodes or subtrees in a same level or height *)
+    Tree (subtree, x, subtree)
+  else
+    let half = (n - 1) / 2 in
+    let left = balanced x half in
+    let right = balanced x (half + 1) in
+    Tree (left, x, right)
+;;
